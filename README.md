@@ -26,7 +26,7 @@ paper's four worked examples:
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env   # fill in DATALOADER_API_KEY / MASSIVE_API_KEY for exp_4
+cp .env.example .env   # fill in MASSIVE_API_KEY for exp_4's live option quotes
 ```
 
 ## Tests

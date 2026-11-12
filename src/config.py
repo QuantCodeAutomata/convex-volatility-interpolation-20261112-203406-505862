@@ -81,14 +81,22 @@ EXP3_EDGE_Z = 6.0  # |z_0| = |z_{n-1}|, in normalized log-moneyness
 # ---------------------------------------------------------------------------
 
 # Knot counts per expiry at which the QP is solved and benchmarked. Paper,
-# Table 3: "ranging from 10 to 40."
-KNOT_COUNTS_PAPER = (10, 20, 40)
-# Reduced grid executed in this replication to fit the available compute
-# time budget (see results/RESULTS.md, "Deviations from the paper").
-KNOT_COUNTS_RUN = (10, 16, 20)
+# Table 3: "ranging from 10 to 40." The live surfaces fit in this
+# replication are small enough (<= 20 expiries) that the full paper grid
+# runs in well under a minute, so no reduction is needed; KNOT_COUNTS_RUN
+# is identical to KNOT_COUNTS_PAPER and ``--full`` is a no-op kept only for
+# interface compatibility with the other experiments.
+KNOT_COUNTS_PAPER = (10, 20, 30, 40)
+KNOT_COUNTS_RUN = KNOT_COUNTS_PAPER
 
 # Underlyings targeted by the paper's benchmark (Table 2): SPX and SX5E.
 UNDERLYINGS_PAPER = ("SPX", "SX5E")
+# Underlyings actually fit in this replication: SX5E (Eurex) is not served
+# by the Massive REST API, and SPX contracts carry only zero-zero NBBO
+# quotes on this entitlement (both confirmed empirically, see
+# results/RESULTS.md), so NDX and NVDA are used instead -- underlyings the
+# paper itself fits in its knot-convergence figure (Section "Scaling").
+UNDERLYINGS_RUN = ("NDX", "NVDA")
 
 # Paper-reported market-data sizes (Table 2), used only to compare against
 # the data actually obtained in this replication.
@@ -97,24 +105,19 @@ SPX_N_EXPIRIES_PAPER = 46
 SX5E_N_QUOTES_PAPER = 3153
 SX5E_N_EXPIRIES_PAPER = 19
 
-# Edge-knot placement in normalized log-moneyness for the synthetic
-# SPX-like / SX5E-like surfaces used in this replication (see
-# results/RESULTS.md for why synthetic surfaces were substituted). Chosen
-# far enough in the tails that d1*d2 > 1 at the edge knots, as required by
-# "PDF >= 0 at the edge knots and beyond".
-EDGE_Z = 5.0
+# Number of nearest-dated listed expiries fetched per underlying for the
+# live surface (paper: 46 for SPX, 19 for SX5E). Not specified in the
+# paper for a live snapshot; chosen close to the SX5E count while keeping
+# the NBBO download time bounded.
+EXP4_N_EXPIRIES_TARGET = 20
 
-# Number of synthetic expiries and approximate quotes per expiry used to
-# build surfaces of comparable size to Table 2 for the SPX-like and
-# SX5E-like benchmarks run in this replication.
-SPX_LIKE_N_EXPIRIES = 46
-SPX_LIKE_QUOTES_PER_EXPIRY = SPX_N_QUOTES_PAPER // SPX_N_EXPIRIES_PAPER
-SX5E_LIKE_N_EXPIRIES = 19
-SX5E_LIKE_QUOTES_PER_EXPIRY = SX5E_N_QUOTES_PAPER // SX5E_N_EXPIRIES_PAPER
-
-# Random seed for synthetic surface generation (reproducibility). Not
-# specified in the paper.
-SYNTHETIC_SEED = 20261112
+# Number of strikes requested per expiry (bounds the number of NBBO
+# fetches: 2 requests per strike). Not specified in the paper for a live
+# snapshot; chosen to keep each expiry's mid-quote count in the same
+# order of magnitude as the paper's average per-expiry quote count
+# (14538/46 ~ 316 for SPX, 3153/19 ~ 166 for SX5E) while keeping the
+# total download time bounded.
+EXP4_N_STRIKES_TARGET = 40
 
 # QP solver tolerance (Clarabel defaults). Paper, "Numerical Results":
 # "the reported timings assume Clarabel's default tolerance."

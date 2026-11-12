@@ -16,13 +16,14 @@ bid-ask aware implied total-variance surface (the CVI parameterization).
 - `exp/` — one script per experiment (`exp1`.. `exp4`), run as
   `python -m exp.exp1`, etc. Only call the `src/` functions with the
   signatures they expose.
-- `data/` — `generate_synthetic.py` builds the synthetic option surfaces
-  used by exp_1-3 (and, for the reduced run, exp_4); `data_loader.py`
-  loads real SPX option-chain data from the Massive REST API for exp_4.
-  No market data is ever committed.
+- `data/` — `generate_synthetic.py` builds the synthetic option-quote
+  surfaces used by exp_1-3; `data_loader.py` fetches live option-chain
+  contracts and NBBO quotes from the Massive REST API for exp_4 (used by
+  `src/market_surface.py`, which turns raw quotes into `ExpiryQuotes`
+  surfaces). No market data is ever committed.
 - `tests/` — pytest suite for `src/` (synthetic fixtures) and for the
   market-data path of exp_4 (marked `market_data`, skipped without
-  `DATALOADER_API_KEY`/`MASSIVE_API_KEY`).
+  `MASSIVE_API_KEY`).
 - `results/` — tables, plots and JSON/CSV logs written by the experiment
   scripts, plus `results/RESULTS.md` (paper comparison, deviations, not
   reproduced).
@@ -47,8 +48,11 @@ python -m exp.exp4 --full                 # paper's knot grid and universe
 - Market data is loaded only through `data/data_loader.py`; synthetic
   data only through `data/generate_synthetic.py`. Neither `src/` nor
   `exp/` fetches or generates data directly.
-- `DATALOADER_API_KEY` and `MASSIVE_API_KEY` are read from an uncommitted
-  `.env` (see `.env.example`); they never appear in code, logs or results.
+- `MASSIVE_API_KEY` is read from an uncommitted `.env` (see
+  `.env.example`); it never appears in code, logs or results. The CVI
+  surface is fit directly from option bid/ask quotes, so the QuantX
+  Dataloader (OHLCV bars only) is not used and `DATALOADER_API_KEY` is
+  not required by this repository.
 - After any rerun, the experiment commands overwrite the files in
   `results/`; the numbers and verdicts in `results/RESULTS.md` must then
   be checked against the new files and updated by hand.
