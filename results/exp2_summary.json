@@ -1,0 +1,68 @@
+{
+  "psd_check": {
+    "symmetric": true,
+    "min_eigenvalue": -1.6999997304335875e-10,
+    "total_size": 140
+  },
+  "weight_vs_spread": {
+    "half_spread_fractions": [
+      0.005,
+      0.02,
+      0.05,
+      0.1,
+      0.3,
+      0.6
+    ],
+    "weights": [
+      6250000.0,
+      390625.0,
+      62500.0,
+      15625.0,
+      1736.111111111111,
+      434.02777777777777
+    ],
+    "weight_ratio_to_tightest": [
+      1.0,
+      0.0625,
+      0.01,
+      0.0025,
+      0.0002777777777777778,
+      6.944444444444444e-05
+    ],
+    "widest_to_tightest_ratio": 6.944444444444444e-05
+  },
+  "chi_squared_vs_n": {
+    "n_mid_values": [
+      10,
+      30,
+      60
+    ],
+    "chi_squared_mean_values": [
+      0.00841100899601137,
+      0.09804351708121624,
+      0.22444036810786092
+    ],
+    "max_over_min_ratio": 26.6841193742979,
+    "within_factor_of_3": false
+  },
+  "fit_quality": {
+    "n_mid_within_bid_ask": 43,
+    "n_mid_total": 60,
+    "fraction_mid_within_bid_ask": 0.7166666666666667,
+    "max_above_ask_violation": 0.013424593042672892,
+    "max_below_bid_violation": 0.38145250948576864
+  },
+  "calibration": {
+    "chi_squared_per_expiry": [
+      0.11127370002049516,
+      6.053896069184345,
+      44.56736066345987,
+      12.648269921632757
+    ],
+    "chi_squared_mean": 15.84520008857437,
+    "total_time": 0.1280243179999161,
+    "n_nonzero_P": 972,
+    "n_nonzero_A": 6040,
+    "n_constraints": 350
+  }
+}

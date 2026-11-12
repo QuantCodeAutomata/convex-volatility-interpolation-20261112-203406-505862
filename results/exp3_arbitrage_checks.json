@@ -1,0 +1,310 @@
+{
+  "expiries": [
+    {
+      "T": 0.08333333333333333,
+      "v_star": 0.051076923076923075
+    },
+    {
+      "T": 0.5625,
+      "v_star": 0.04768
+    },
+    {
+      "T": 1.0416666666666667,
+      "v_star": 0.045877551020408164
+    },
+    {
+      "T": 1.5208333333333333,
+      "v_star": 0.0447603305785124
+    },
+    {
+      "T": 2.0,
+      "v_star": 0.044000000000000004
+    }
+  ],
+  "edge_d1_d2": [
+    {
+      "T": 0.08333333333333333,
+      "v_star": 0.051076923076923075,
+      "d1_d2_left": 35.9989358974359,
+      "d1_d2_right": 35.9989358974359,
+      "pass": true
+    },
+    {
+      "T": 0.5625,
+      "v_star": 0.04768,
+      "d1_d2_left": 35.993295,
+      "d1_d2_right": 35.993295,
+      "pass": true
+    },
+    {
+      "T": 1.0416666666666667,
+      "v_star": 0.045877551020408164,
+      "d1_d2_left": 35.98805272108844,
+      "d1_d2_right": 35.98805272108844,
+      "pass": true
+    },
+    {
+      "T": 1.5208333333333333,
+      "v_star": 0.0447603305785124,
+      "d1_d2_left": 35.9829817493113,
+      "d1_d2_right": 35.9829817493113,
+      "pass": true
+    },
+    {
+      "T": 2.0,
+      "v_star": 0.044000000000000004,
+      "d1_d2_left": 35.978,
+      "d1_d2_right": 35.978,
+      "pass": true
+    }
+  ],
+  "edge_d1_d2_all_pass": true,
+  "calibration": {
+    "n_constraints": 438,
+    "n_nonzero_P": 1215,
+    "n_nonzero_A": 7640,
+    "iterations_time": [
+      0.06534174000012172,
+      0.08710658600011811
+    ],
+    "total_time": 0.15244832600023983,
+    "chi_squared_per_expiry": [
+      0.11219731672006913,
+      0.0629833974540776,
+      0.03604513089442551,
+      0.09188047288070085,
+      0.27859083444349236
+    ],
+    "chi_squared_mean": 0.11633943047855308
+  },
+  "linear_extrapolation": {
+    "max_abs_c_at_edges": 0.0,
+    "pass": true,
+    "per_expiry": [
+      {
+        "expiry": 0,
+        "c_left": 0.0,
+        "c_right": 0.0
+      },
+      {
+        "expiry": 1,
+        "c_left": 0.0,
+        "c_right": 0.0
+      },
+      {
+        "expiry": 2,
+        "c_left": 0.0,
+        "c_right": 0.0
+      },
+      {
+        "expiry": 3,
+        "c_left": 0.0,
+        "c_right": 0.0
+      },
+      {
+        "expiry": 4,
+        "c_left": 0.0,
+        "c_right": 0.0
+      }
+    ]
+  },
+  "positivity_of_variance": {
+    "total_violations": 0,
+    "max_violation": 0.0,
+    "per_expiry": [
+      {
+        "expiry": 0,
+        "T": 0.08333333333333333,
+        "n_violations": 0,
+        "max_violation": 0.0
+      },
+      {
+        "expiry": 1,
+        "T": 0.5625,
+        "n_violations": 0,
+        "max_violation": 0.0
+      },
+      {
+        "expiry": 2,
+        "T": 1.0416666666666667,
+        "n_violations": 0,
+        "max_violation": 0.0
+      },
+      {
+        "expiry": 3,
+        "T": 1.5208333333333333,
+        "n_violations": 0,
+        "max_violation": 0.0
+      },
+      {
+        "expiry": 4,
+        "T": 2.0,
+        "n_violations": 0,
+        "max_violation": 0.0
+      }
+    ]
+  },
+  "calendar_spread": {
+    "total_violations": 0,
+    "max_violation": 0.0,
+    "per_pair": [
+      {
+        "pair": [
+          0,
+          1
+        ],
+        "n_violations": 0,
+        "max_violation": 0.0
+      },
+      {
+        "pair": [
+          1,
+          2
+        ],
+        "n_violations": 0,
+        "max_violation": 0.0
+      },
+      {
+        "pair": [
+          2,
+          3
+        ],
+        "n_violations": 0,
+        "max_violation": 0.0
+      },
+      {
+        "pair": [
+          3,
+          4
+        ],
+        "n_violations": 0,
+        "max_violation": 0.0
+      }
+    ]
+  },
+  "lee_bounds": {
+    "total_violations": 0,
+    "max_violation": 0.0,
+    "per_expiry": [
+      {
+        "expiry": 0,
+        "T": 0.08333333333333333,
+        "s_left": -4.063704838269385e-07,
+        "s_right": 2.061720702284236e-07,
+        "bound": 30.65538949445398,
+        "n_violations": 0,
+        "max_violation": 0.0
+      },
+      {
+        "expiry": 1,
+        "T": 0.5625,
+        "s_left": -0.13292460957457783,
+        "s_right": 0.004346530994441469,
+        "bound": 12.21228842412186,
+        "n_violations": 0,
+        "max_violation": 0.0
+      },
+      {
+        "expiry": 2,
+        "T": 1.0416666666666667,
+        "s_left": -0.4296341118261741,
+        "s_right": 0.11316041480821927,
+        "bound": 9.148728756494371,
+        "n_violations": 0,
+        "max_violation": 0.0
+      },
+      {
+        "expiry": 3,
+        "T": 1.5208333333333333,
+        "s_left": -0.3599779897708191,
+        "s_right": 0.3639912438131431,
+        "bound": 7.665436247665013,
+        "n_violations": 0,
+        "max_violation": 0.0
+      },
+      {
+        "expiry": 4,
+        "T": 2.0,
+        "s_left": -0.31660824565810197,
+        "s_right": 0.32013841576988883,
+        "bound": 6.741898624632421,
+        "n_violations": 0,
+        "max_violation": 0.0
+      }
+    ]
+  },
+  "pdf_condition": {
+    "before_linearization": {
+      "total_violations": 4,
+      "max_violation": 0.08498796967838654,
+      "per_expiry": [
+        {
+          "expiry": 0,
+          "T": 0.08333333333333333,
+          "n_violations": 0,
+          "max_violation": 0.0
+        },
+        {
+          "expiry": 1,
+          "T": 0.5625,
+          "n_violations": 1,
+          "max_violation": 0.08498796967838654
+        },
+        {
+          "expiry": 2,
+          "T": 1.0416666666666667,
+          "n_violations": 1,
+          "max_violation": 0.04026821177987509
+        },
+        {
+          "expiry": 3,
+          "T": 1.5208333333333333,
+          "n_violations": 2,
+          "max_violation": 0.04211202667370462
+        },
+        {
+          "expiry": 4,
+          "T": 2.0,
+          "n_violations": 0,
+          "max_violation": 0.0
+        }
+      ]
+    },
+    "after_linearization": {
+      "total_violations": 0,
+      "max_violation": 0.0,
+      "per_expiry": [
+        {
+          "expiry": 0,
+          "T": 0.08333333333333333,
+          "n_violations": 0,
+          "max_violation": 0.0
+        },
+        {
+          "expiry": 1,
+          "T": 0.5625,
+          "n_violations": 0,
+          "max_violation": 0.0
+        },
+        {
+          "expiry": 2,
+          "T": 1.0416666666666667,
+          "n_violations": 0,
+          "max_violation": 0.0
+        },
+        {
+          "expiry": 3,
+          "T": 1.5208333333333333,
+          "n_violations": 0,
+          "max_violation": 0.0
+        },
+        {
+          "expiry": 4,
+          "T": 2.0,
+          "n_violations": 0,
+          "max_violation": 0.0
+        }
+      ]
+    }
+  }
+}

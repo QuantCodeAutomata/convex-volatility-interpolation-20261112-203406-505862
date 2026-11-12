@@ -1,0 +1,165 @@
+{
+  "dual_parameterization": [
+    {
+      "n_knots": 7,
+      "max_abs_diff_v_interior": 6.661338147750939e-16,
+      "max_abs_diff_dv_interior": 8.604228440844963e-16,
+      "max_abs_diff_d2v_interior": 1.0334615108131828e-15,
+      "max_abs_diff_v_tails": 3.552713678800501e-15,
+      "max_abs_diff_dv_tails": 9.159339953157541e-16,
+      "cond_M": 46.82377495968066,
+      "d2v_at_z0": 0.0,
+      "d2v_at_zn": -6.938893903907228e-18,
+      "max_abs_d2v_in_tails": 0.0,
+      "knot_style": "even"
+    },
+    {
+      "n_knots": 7,
+      "max_abs_diff_v_interior": 1.3322676295501878e-15,
+      "max_abs_diff_dv_interior": 5.551115123125783e-16,
+      "max_abs_diff_d2v_interior": 2.498001805406602e-16,
+      "max_abs_diff_v_tails": 3.552713678800501e-15,
+      "max_abs_diff_dv_tails": 5.551115123125783e-16,
+      "cond_M": 75.7853913906348,
+      "d2v_at_z0": 0.0,
+      "d2v_at_zn": -1.3877787807814457e-17,
+      "max_abs_d2v_in_tails": 0.0,
+      "knot_style": "nm_dense"
+    },
+    {
+      "n_knots": 9,
+      "max_abs_diff_v_interior": 4.440892098500626e-16,
+      "max_abs_diff_dv_interior": 2.220446049250313e-16,
+      "max_abs_diff_d2v_interior": 4.675079767757495e-16,
+      "max_abs_diff_v_tails": 1.1102230246251565e-15,
+      "max_abs_diff_dv_tails": 2.7755575615628914e-16,
+      "cond_M": 81.16030628471822,
+      "d2v_at_z0": 0.0,
+      "d2v_at_zn": 0.0,
+      "max_abs_d2v_in_tails": 0.0,
+      "knot_style": "even"
+    },
+    {
+      "n_knots": 9,
+      "max_abs_diff_v_interior": 1.3322676295501878e-15,
+      "max_abs_diff_dv_interior": 8.881784197001252e-16,
+      "max_abs_diff_d2v_interior": 8.495808223596413e-16,
+      "max_abs_diff_v_tails": 5.329070518200751e-15,
+      "max_abs_diff_dv_tails": 8.881784197001252e-16,
+      "cond_M": 260.8646236059946,
+      "d2v_at_z0": 0.0,
+      "d2v_at_zn": 0.0,
+      "max_abs_d2v_in_tails": 0.0,
+      "knot_style": "nm_dense"
+    },
+    {
+      "n_knots": 15,
+      "max_abs_diff_v_interior": 8.881784197001252e-16,
+      "max_abs_diff_dv_interior": 8.604228440844963e-16,
+      "max_abs_diff_d2v_interior": 3.3306690738754696e-15,
+      "max_abs_diff_v_tails": 4.440892098500626e-15,
+      "max_abs_diff_dv_tails": 1.0685896612017132e-15,
+      "cond_M": 265.69427843179557,
+      "d2v_at_z0": 0.0,
+      "d2v_at_zn": 0.0,
+      "max_abs_d2v_in_tails": 0.0,
+      "knot_style": "even"
+    },
+    {
+      "n_knots": 15,
+      "max_abs_diff_v_interior": 5.551115123125783e-16,
+      "max_abs_diff_dv_interior": 3.3306690738754696e-16,
+      "max_abs_diff_d2v_interior": 4.440892098500626e-16,
+      "max_abs_diff_v_tails": 1.3322676295501878e-15,
+      "max_abs_diff_dv_tails": 3.3306690738754696e-16,
+      "cond_M": 3013.362912055302,
+      "d2v_at_z0": 0.0,
+      "d2v_at_zn": 0.0,
+      "max_abs_d2v_in_tails": 0.0,
+      "knot_style": "nm_dense"
+    }
+  ],
+  "figure1_reproduction": {
+    "z_table": [
+      -8.0,
+      -6.0,
+      -4.0,
+      -2.0,
+      0.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0
+    ],
+    "v_table": [
+      2.3,
+      1.5,
+      0.9,
+      0.4,
+      0.1,
+      0.2,
+      0.4,
+      0.7,
+      1.0
+    ],
+    "dv_table": [
+      -0.0,
+      -0.0,
+      -0.02,
+      -0.08,
+      -0.02,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "d2v_table": [
+      0.0,
+      0.0,
+      0.03,
+      0.06,
+      0.12,
+      0.03,
+      0.02,
+      0.0,
+      0.0
+    ],
+    "v_fit_at_table": [
+      1.9667369636726706,
+      1.5335793728543334,
+      0.9894229369263203,
+      0.5137276661351552,
+      0.22630617170440193,
+      0.27070113515205396,
+      0.4436324590051829,
+      0.6879170068721364,
+      0.8679762876777508
+    ],
+    "dv_fit_at_table": [
+      -0.1481169050343715,
+      -0.28130964435570677,
+      -0.24664195111986326,
+      -0.2163527942036534,
+      -0.049671088497183574,
+      0.05788771455013014,
+      0.10870264528668015,
+      0.12272463012104584,
+      0.05867720547655323
+    ],
+    "d2v_fit_at_table": [
+      0.0,
+      0.011193124284776658,
+      0.05980764564210637,
+      0.09790922204505177,
+      0.1621020572348008,
+      0.05356704505068442,
+      0.03454415300172848,
+      -0.00402766437595422,
+      0.0
+    ],
+    "max_abs_err_v": 0.33326303632732923,
+    "max_abs_err_dv": 0.28130964435570677,
+    "max_abs_err_d2v": 0.042102057234800816,
+    "note": "Approximate reproduction: the paper does not disclose the knot grid used for Figure 1, so this is a weighted least-squares fit of the CVI cubic spline to the published table, not an exact digit-level match."
+  }
+}
