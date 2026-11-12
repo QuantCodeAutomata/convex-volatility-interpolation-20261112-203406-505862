@@ -173,8 +173,8 @@ def greville_abscissae(t: np.ndarray, degree: int = DEGREE) -> np.ndarray:
 
 def bspline_basis_matrix(z_eval: np.ndarray, z_knots: np.ndarray) -> np.ndarray:
     """Design matrix B[a, i] = B_i(z_eval[a]) of the clamped cubic
-    B-splines, evaluated strictly inside [z_0, z_{n-1}] (scipy.interpolate
-    .BSpline, as recommended in the paper's implementation notes)."""
+    B-splines, evaluated strictly inside [z_0, z_{n-1}], built with
+    scipy.interpolate.BSpline."""
     t = clamped_knot_vector(z_knots)
     n_basis = n_bspline_basis(z_knots)
     z_eval = np.atleast_1d(np.asarray(z_eval, dtype=float))
