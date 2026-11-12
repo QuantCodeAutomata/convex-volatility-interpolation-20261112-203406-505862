@@ -12,10 +12,10 @@ z := k / (sigma_star * sqrt(T)), k = log(K/F), by either:
 
 Both representations span the same (n + 2)-dimensional space of C^2
 piecewise-cubic functions over the knots, so they are linked by a square
-linear transformation w = M @ p (uncertainty noted in the paper: "this
-linear transformation ... is described as 'known' but not explicitly
-given"; M is derived here from standard spline theory via collocation at
-the B-spline Greville abscissae, scipy.interpolate.BSpline).
+linear transformation w = M @ p. The paper describes this transformation
+as "known" without writing it out explicitly; M is derived here from
+standard spline theory via collocation at the B-spline Greville abscissae
+(scipy.interpolate.BSpline).
 
 Outside [z_0, z_{n-1}] both representations are linearly extrapolated,
 consistent with setting d2v/dz2 = 0 at the edge knots (Section "CVI Cubic
@@ -192,15 +192,15 @@ def build_transformation_matrix(z_knots: np.ndarray) -> np.ndarray:
     p = (v(0), dv/dz(0), c_0, ..., c_{n-1}) the cubic-spline parameters and
     w the cubic B-spline weights representing the same function.
 
-    Derivation (paper leaves the explicit transform undescribed, calling
-    it only "known"): both parameterizations span the same (n+2)
+    Derivation (the paper leaves the explicit transform undescribed,
+    calling it only "known"): both parameterizations span the same (n+2)
     dimensional space of C^2 piecewise-cubic functions over the knots.
     M is found by evaluating the cubic-spline representation of each
     parameter basis vector e_i at the B-spline's Greville collocation
     points and solving the resulting square linear system for the
-    corresponding B-spline weights (as suggested in the paper's
-    implementation notes: "found by evaluating both representations at
-    sufficient collocation points and solving a linear system").
+    corresponding B-spline weights, i.e. by evaluating both
+    representations at sufficient collocation points and solving a
+    linear system.
     """
     z_knots = _check_knots(z_knots)
     n = z_knots.size

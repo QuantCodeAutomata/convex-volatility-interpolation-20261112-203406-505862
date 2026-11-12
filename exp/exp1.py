@@ -117,12 +117,10 @@ def reproduce_figure1() -> dict:
     """Approximate reproduction of Figure 1 (p.2) from its (z, v, dv/dz,
     d2v/dz2) table.
 
-    The paper gives the table only at nine z values and states (per this
-    replication's reading of "CVI Cubic Spline") that these are knots of a
-    cubic spline, but does not disclose the full knot grid used to produce
-    the figure (see exp_1's recorded uncertainty: "the exact knot positions
-    used for the example in Figure 1 are not fully specified"). Treating the
-    nine table z-values themselves as the only knots over- or under-
+    The paper's "CVI Cubic Spline" section states that these nine points are
+    knots of a cubic spline, but does not disclose the full knot grid used to
+    produce the figure. Treating the nine table z-values themselves as the
+    only knots over- or under-
     determines v, dv/dz and d2v/dz2 simultaneously (verified numerically:
     matching v exactly leaves dv/dz, d2v/dz2 far from the table, and
     vice-versa), which confirms the table was generated on a denser,
