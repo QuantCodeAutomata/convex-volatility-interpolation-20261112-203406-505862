@@ -247,7 +247,7 @@ def load_market_surface(
     download-time liquidity-ranking rule applied elsewhere in this
     replication), each built by ``build_expiry_quotes``.
     """
-    asof = dt.datetime.utcnow().date()
+    asof = dt.datetime.now(dt.timezone.utc).date()
     exp_gte = (asof + dt.timedelta(days=min_days)).isoformat()
     exp_lte = (asof + dt.timedelta(days=max_days)).isoformat()
     contracts, spot = fetch_option_contracts(underlying, exp_gte, exp_lte)
